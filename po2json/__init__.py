@@ -26,10 +26,15 @@ def compile_to_js(po_file, lang, domain):
         catalog = read_po(f, locale=lang, domain=domain)
 
         for message in catalog:
+
             msgid = message.id
+            msgid2 = [None, message.id]
+
             if isinstance(msgid, (list, tuple)):
                 msgid = msgid[0]
-            jscatalog[msgid] = message.string
+
+            msgid2[1] = message.string
+            jscatalog[msgid] = msgid2
 
     return json.dumps(dict(
         messages=jscatalog,
