@@ -19,3 +19,6 @@ Then toi use the translation just pass the locale name to babel:
 
     translations = babel.Translations.load(window["es"]).install();
     trans_text = translations.gettext(text);
+
+<b>Changes:</b>
+(27.08.13) Changes were made on \_\_init\_\_.py so that it is compatible with Javascript Gettext (http://jsgettext.berlios.de/).
